@@ -13,7 +13,7 @@ setWebhook = async (route) => {
             url: HOSTURL + route
         })
 
-        console.log(response.data);
+        // console.log(response.data);
 
     }
     catch (e) {
@@ -25,7 +25,7 @@ setWebhook = async (route) => {
 getBotInfo = async () => {
     try {
         const info = await api.get('/getMe');
-        console.log(info.data);
+        // console.log(info.data);
         
         return info.data;
     } catch (error) {
