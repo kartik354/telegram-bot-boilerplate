@@ -1,11 +1,12 @@
 const axios = require("axios");
 
-const { BOT, HOSTURL } = require("./configs/configs")
+const { BOT, HOSTURL } = require("./configs")
 
 const api = axios.create({
     baseURL: BOT.APIURL + BOT.APIKEY
 })
 
+// Sets webhook to url
 setWebhook = async (route) => {
     try {
         const response = await api.post('/setWebhook', {
@@ -20,6 +21,7 @@ setWebhook = async (route) => {
     }
 }
 
+// Returns Bot info
 getBotInfo = async () => {
     try {
         const info = await api.get('/getMe');
@@ -31,6 +33,7 @@ getBotInfo = async () => {
     }
 }
 
+// Returns Webhook Info
 getWebhookInfo = async () => {
     try {
         const webhookinfo = await api.get('/getWebhookInfo');
